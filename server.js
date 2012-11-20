@@ -2,7 +2,7 @@ var http = require("http");
 
 http.createServer( function(req, res) {
     
-    res.writeHead( 200, {'Content-Type': 'text/plain'} );
+    res.writeHead( 200, {'Content-Type': 'text/html'} );
     res.end("<h1>Welcome to Dave's Amazing Cloud App!</h1>" +
         "<p>Written in highly-scalable, non-blocking, asynchronous server-side JavaScript (Node.js) " +
         "using a cloud-based IDE (Cloud9) " +

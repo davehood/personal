@@ -1,0 +1,44 @@
+extends layout
+
+block content
+
+  include includes/header
+
+  h1= title
+  p Welcome to #{title}
+  section#wrapper
+    h2 Basic Structure
+    section
+      p
+        span This is a span within a p within a div!
+
+      - var name = "Dave"
+      h3 Hello #{name}!
+
+    - users = ['Dave', 'VJ', 'Travis', 'Hugo']
+    - each user in users
+      p= user
+
+    ul
+      - obj = { first_name: 'Jim', surname: 'Bob' }
+      - each val, key in obj
+        li #{key}: #{val}
+
+    - awake = false
+    - if (awake)
+      p You are awake! Make coffee!
+    - else 
+      p You are sleeping
+
+    mixin people(people)
+      ol
+        each person in people
+          li= person
+
+    - people = ['Armin', 'Bassjackers', 'Chemical Brothers']
+
+    mixin people(users)
+    mixin people(people)
+
+
+    include includes/footer

@@ -29,6 +29,10 @@ http.createServer( function(req, res) {
             'Location': '/'
         });
         res.end();
+    } else if (pathname === '/get503') {
+        res.writeHead(503, {
+        });
+        res.end();
     } else {
         res.writeHead(404, {
             'Content-Type': 'text/plain'
